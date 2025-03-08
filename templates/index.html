@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Classifier</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .root{
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            color: white;
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="root" style="padding-top: 50px; display: flex; align-items: center;flex-direction: column;">
+<h1 style="text-align: center;">Email Spam Classifer</h1>
+<form action="/submit" method="post">
+    <div style="display: flex;flex-direction: column;">
+        <label for="text">Enter Your Message</label>
+        <textarea name="text" id="text" rows="6" cols="50"></textarea>
+        <button class="btn btn-danger" style="width: 70px; align-self: center;" type="submit">Submit</button>
+    </div>
+</form>
+{% if prediction is not none %}
+        <h2>Prediction: {{ prediction }}</h2>
+        <a href="/" class="btn btn-light">Reset</a>
+    {% endif %}
+    </div>
+</body>
+</html>
